@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta property="og:title" content="LUMIX Outdoor Lighting">
-<meta property="og:description" content="Holiday and landscape lighting design, installation and take down in Bergen County, NJ.">
+<meta property="og:description" content="Holiday and landscape lighting design, installation and take down in Bergen, Passaic and Essex Counties, NJ.">
 <link rel="icon" href="mark.jpg">
 <title>LUMIX Outdoor Lighting</title>
-<meta name="description" content="LUMIX Outdoor Lighting designs, installs and takes down holiday and landscape lighting for homes across Bergen County, NJ. Get a free quote.">
+<meta name="description" content="LUMIX Outdoor Lighting designs, installs and takes down holiday and landscape lighting for homes across Bergen, Passaic and Essex Counties in North Jersey. Get a free quote.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500;600&display=swap">
@@ -144,7 +144,7 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{border-color:var
 /* area */
 .area{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
 @media (max-width:820px){.area{grid-template-columns:1fr}}
-.towns{columns:2;column-gap:28px;margin:0;padding:0;list-style:none;color:var(--mute)}
+.counties{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}@media (max-width:560px){.counties{grid-template-columns:1fr}}.counties h3{font:500 12px/1 var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}.towns{margin:0;padding:0;list-style:none;color:var(--mute)}
 .towns li{padding-block:9px;border-bottom:1px solid var(--line);break-inside:avoid}
 
 footer{border-top:1px solid var(--line);padding-block:40px;color:var(--mute);font-size:14px}
@@ -168,7 +168,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-bet
   <div class="hero">
     <img class="bg" src="hero.jpg" alt="A modern two-story home at night with warm roofline lights, uplit trees, lit path lights and a wreath on the front door">
     <div class="copy"><div class="wrap">
-      <div class="eyebrow">Holiday &amp; landscape lighting · Bergen County, NJ</div>
+      <div class="eyebrow">Holiday &amp; landscape lighting · North Jersey</div>
       <h1>Bringing your home <em>to light.</em></h1>
       <p>We design it, install it, and take it down after the season. You just come home to it.</p>
       <div class="row">
@@ -238,7 +238,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-bet
       <div class="contact">
         <a href="tel:+12017013299">(201) 701-3299</a>
         <a href="mailto:lumix@lumixoutdoorlighting.com" style="font-size:19px">lumix@lumixoutdoorlighting.com</a>
-        <small>Serving Bergen County &amp; surrounding areas</small>
+        <small>Serving Bergen, Passaic &amp; Essex Counties</small>
       </div>
     </div>
 
@@ -301,20 +301,22 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-bet
         <p id="previewNote" hidden style="font-size:14px">This is a preview copy of the site, so no request was sent. On lumixoutdoorlighting.com this form sends straight to LUMIX.</p>
       </div>
 
-      <div class="foot-note"><span>Free quote</span><span>Replies within 1 business day</span><span>Bergen County, NJ</span></div>
+      <div class="foot-note"><span>Free quote</span><span>Replies within 1 business day</span><span>Bergen · Passaic · Essex</span></div>
     </div>
   </div></section>
 
   <section id="area" style="border-top:1px solid var(--line)"><div class="wrap area">
     <div class="head" style="margin:0">
       <div class="eyebrow">Service area</div>
-      <h2>Lighting up Bergen County.</h2>
-      <p>Based in Fair Lawn and serving homes and businesses across Bergen County and nearby towns. Not on the list? Ask us. We likely cover you.</p>
+      <h2>Lighting up North Jersey.</h2>
+      <p>Based in Fair Lawn and serving homes and businesses across Bergen, Passaic and Essex Counties. Not on the list? Ask us. We likely cover you.</p>
       <div><a class="btn" href="#quote">Check my address</a></div>
     </div>
-    <ul class="towns">
-      <li>Fair Lawn</li><li>Glen Rock</li><li>Ridgewood</li><li>Paramus</li><li>Hackensack</li><li>Saddle Brook</li><li>Elmwood Park</li><li>Mahwah</li><li>Wyckoff</li><li>Franklin Lakes</li><li>Teaneck</li><li>Upper Saddle River</li>
-    </ul>
+    <div class="counties">
+      <div><h3>Bergen County</h3><ul class="towns"><li>Fair Lawn</li><li>Glen Rock</li><li>Ridgewood</li><li>Paramus</li><li>Hackensack</li><li>Saddle Brook</li><li>Elmwood Park</li><li>Wyckoff</li></ul></div>
+      <div><h3>Passaic County</h3><ul class="towns"><li>Clifton</li><li>Wayne</li><li>Paterson</li><li>Hawthorne</li><li>Totowa</li><li>Little Falls</li><li>Woodland Park</li><li>Haledon</li></ul></div>
+      <div><h3>Essex County</h3><ul class="towns"><li>Nutley</li><li>Belleville</li><li>Montclair</li><li>Bloomfield</li><li>Glen Ridge</li><li>Verona</li><li>Cedar Grove</li><li>Caldwell</li></ul></div>
+    </div>
   </div></section>
 </main>
 
