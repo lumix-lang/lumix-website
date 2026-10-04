@@ -182,38 +182,97 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{border-color:var
 
 footer{border-top:1px solid var(--line);padding-block:40px;color:var(--mute);font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:center}
+/* === Home stage (full-bleed dusk photo, nav over the image) === */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hnav{position:absolute;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:20;background:linear-gradient(180deg,#f7f3ecf2,#f7f3ecd9);backdrop-filter:blur(8px);border-bottom:1px solid #ffffff66}
+.hnav-in{max-width:1440px;margin:0 auto;padding:18px clamp(16px,3.5vw,52px);display:flex;align-items:center;gap:clamp(18px,3vw,52px)}
+.hl,.hr{display:flex;gap:clamp(18px,3vw,52px);font:400 13px/1 var(--body);letter-spacing:.2em;text-transform:uppercase}
+.hr{margin-left:auto}
+.hl a,.hr a{color:var(--ink);text-decoration:none;padding-block:8px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.hl a:hover,.hr a:hover{color:var(--gold)}
+.hl a[aria-current="page"]{color:var(--gold);border-bottom-color:var(--gold)}
+.hmark{display:none;font:400 20px/1 var(--body);letter-spacing:.32em;color:var(--ink);text-decoration:none}
+.pill{display:inline-flex;align-items:center;gap:12px;padding:13px 28px;border-radius:999px;background:linear-gradient(180deg,#d2a24a,#9c6f1f);color:#fff;text-decoration:none;font:500 13px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;box-shadow:0 6px 18px #9c6f1f40;transition:filter .2s,transform .2s}
+.pill:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.pill.big{padding:17px 34px;font-size:14px;background:linear-gradient(180deg,#f3d48c,#c9973f);color:#1b1407;border:1px solid #ffe7ad}
+.stage{position:relative;min-height:clamp(640px,92vh,940px);padding:0;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+.stage-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:64% 42%}
+.stage::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 55% 60% at 22% 38%,#10162bb3 0%,#10162b59 55%,#10162b00 80%),linear-gradient(0deg,#0b0f1ce6 0%,#0b0f1c99 18%,#0b0f1c00 40%)}
+.stage-copy{position:relative;z-index:2;padding:clamp(130px,17vh,190px) clamp(16px,6vw,110px) 40px;display:grid;justify-items:center;width:max-content;max-width:100%;text-align:center}
+.word{font:300 clamp(64px,9.5vw,150px)/.9 var(--body);letter-spacing:.06em;background:linear-gradient(180deg,#fffaf0 0%,#f6dfa8 55%,#d9a84e 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px #ffcf7a66) drop-shadow(0 0 2px #ffe9b8);position:relative;padding-right:.08em}
+.wordwrap{position:relative;font-size:clamp(64px,9.5vw,150px)}
+.spark{position:absolute;width:.6em;height:.6em;right:.02em;top:-.36em;fill:#fff6dd;filter:drop-shadow(0 0 10px #ffd27a) drop-shadow(0 0 22px #ffb84a)}
+.sub{display:flex;align-items:center;gap:18px;margin-top:22px;font:400 clamp(14px,1.5vw,22px)/1 var(--body);letter-spacing:.42em;text-transform:uppercase;color:#f3ead9}
+.sub span{display:block;width:clamp(40px,6vw,90px);height:1px;background:linear-gradient(90deg,#e8c37a00,#e8c37a)}
+.sub span:last-child{background:linear-gradient(90deg,#e8c37a,#e8c37a00)}
+.tag{margin:34px 0 34px;font:400 clamp(13px,1.2vw,17px)/1.75 var(--body);letter-spacing:.28em;text-transform:uppercase;color:#f6f0e4;text-shadow:0 1px 12px #0b0f1c}
+.stage-svc{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:0 clamp(16px,4vw,64px) clamp(26px,4vh,44px)}
+.sv{display:grid;justify-items:center;gap:10px;text-align:center;padding:10px 18px;text-decoration:none;color:#fff;min-width:0}
+.sv+.sv{border-left:1px solid #e8c37a80}
+.sv svg{width:clamp(84px,9vw,128px);height:auto;fill:none;stroke:#ffd98f;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 4px #ffcf7a) drop-shadow(0 0 12px #ffb84a99);margin-bottom:6px}
+.sv b{font:500 clamp(13px,1.15vw,17px)/1.3 var(--body);letter-spacing:.18em;text-transform:uppercase}
+.sv small{font:400 clamp(11px,.85vw,13px)/1.6 var(--body);letter-spacing:.16em;text-transform:uppercase;color:#e9e2d4;max-width:24ch}
+.sv:hover b{color:#ffd98f}
+@media (max-width:980px){
+  .hnav-in{flex-wrap:wrap;row-gap:4px;column-gap:16px;padding-block:12px}
+  .hmark{display:block;order:1}
+  .pill{order:2;margin-left:auto;padding:11px 18px;font-size:11px}
+  .hl{order:3}.hr{order:4;margin-left:0}
+  .hl,.hr{gap:14px;font-size:10.5px;letter-spacing:.14em}
+  .hl a,.hr a{padding-block:6px}
+  .stage-copy{width:auto;padding-top:150px}
+  .stage-svc{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}
+  .sv:nth-child(3){border-left:0}
+}
+@media (max-width:520px){.hl a[href="index.html"]{display:none}.tag{letter-spacing:.18em}.sub{letter-spacing:.3em}.sv{padding:8px 8px}.sv small{display:none}}
 </style>
 </head>
 <body>
 
 
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="LUMIX Outdoor Lighting home"><img src="mark.jpg" alt=""><span><b>LUMIX</b><small>OUTDOOR LIGHTING</small></span></a>
-    <nav class="links" aria-label="Main">
-      <a href="gallery.html">Gallery</a><a href="smart.html">LUMIX Smart</a><a href="about.html">About</a>
+<header class="hnav">
+  <div class="hnav-in">
+    <nav class="hl" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a><a href="about.html">About us</a><a href="smart.html">LUMIX Smart</a>
     </nav>
-    <a class="btn" href="#quote">Free quote</a>
+    <a class="hmark" href="index.html" aria-label="LUMIX Outdoor Lighting home">LUMIX</a>
+    <nav class="hr" aria-label="More">
+      <a href="gallery.html#services">Services</a><a href="gallery.html">Gallery</a><a href="#quote">Contact</a>
+    </nav>
+    <a class="pill" href="#quote">Get a quote</a>
   </div>
 </header>
 
 <main id="top">
-  <div class="hero">
-    <img class="bg" src="hero.jpg" alt="A modern two-story home at night with warm roofline lights, uplit trees, lit path lights and a wreath on the front door">
-    <div class="copy"><div class="wrap">
-      <div class="eyebrow">Holiday &amp; landscape lighting · North Jersey</div>
-      <h1>Bringing your home <em>to light.</em></h1>
-      <p>We design it, install it, and take it down after the season. You just come home to it.</p>
-      <div class="row">
-        <a class="btn solid" href="#quote">Get a free quote <span aria-hidden="true">→</span></a>
-        <a class="phone" href="tel:+12017013299"><span>Call or text</span>(201) 701-3299</a>
-      </div>
-    </div></div>
-  </div>
+  <section class="stage" aria-label="LUMIX Outdoor Lighting">
+    <img class="stage-bg" src="hero.jpg" alt="A two-story stone and stucco home at dusk with warm roofline lights, wreaths, garland around the entry and lit trees">
+    <div class="stage-copy">
+      <div class="wordwrap" aria-hidden="true"><div class="word">LUMIX</div><svg class="spark" viewBox="0 0 100 100"><path d="M50 0 54 46 100 50 54 54 50 100 46 54 0 50 46 46Z"/></svg></div>
+      <h1 class="sr">LUMIX Outdoor Lighting</h1>
+      <div class="sub"><span></span>Outdoor Lighting<span></span></div>
+      <p class="tag">Bringing your home to light<br>with smarter solutions</p>
+      <a class="pill big" href="#quote">Get a free quote <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="stage-svc">
+      <a class="sv" href="gallery.html#services">
+        <svg viewBox="0 0 120 64" aria-hidden="true"><path d="M8 36 60 6l52 30"/><path d="M18 31v29h84V31"/><path d="M50 60V44h20v16"/><rect x="28" y="40" width="12" height="10"/><rect x="80" y="40" width="12" height="10"/><path d="M2 60h116"/></svg>
+        <b>Roofline lighting</b><small>Clean, elegant, professional</small>
+      </a>
+      <a class="sv" href="gallery.html#services">
+        <svg viewBox="0 0 120 64" aria-hidden="true"><path d="M42 4v56M42 12l-12 12M42 12l12 12M42 22l-16 16M42 22l16 16M42 34l-19 18M42 34l19 18"/><path d="M80 10v50M80 18l-10 10M80 18l10 10M80 28l-14 14M80 28l14 14M80 40l-16 14M80 40l16 14"/><path d="M14 60h92"/></svg>
+        <b>Tree &amp; landscape lighting</b><small>Highlight what makes your home special</small>
+      </a>
+      <a class="sv" href="gallery.html#services">
+        <svg viewBox="0 0 120 64" aria-hidden="true"><path d="M38 60V14h44v46"/><path d="M34 14h52"/><circle cx="60" cy="34" r="8"/><path d="M52 60V48h16v12"/><path d="M22 60l5-26 5 26M88 60l5-26 5 26"/><path d="M14 60h92"/></svg>
+        <b>Entryway design</b><small>Make a beautiful first impression</small>
+      </a>
+      <a class="sv" href="gallery.html#services">
+        <svg viewBox="0 0 120 64" aria-hidden="true"><path d="M20 30 60 6l40 24"/><path d="M28 26v34h64V26"/><rect x="38" y="36" width="44" height="24"/><path d="M38 44h44M38 52h44"/><path d="M10 60l4-18 4 18M102 60l4-18 4 18"/><path d="M4 60h112"/></svg>
+        <b>Custom designs</b><small>Tailored to your home and style</small>
+      </a>
+    </div>
+  </section>
 
-  <div class="strip"><div class="wrap">
-    <span>Design</span><i>·</i><span>Installation</span><i>·</i><span>Take down</span><i>·</i><span>Custom to your home</span>
-  </div></div>
 
   <section id="quote"><div class="wrap quote-grid">
     <div>
