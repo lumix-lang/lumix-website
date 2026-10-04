@@ -182,18 +182,40 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{border-color:var
 
 footer{border-top:1px solid var(--line);padding-block:40px;color:var(--mute);font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:center}
+/* === Shared LUMIX menu === */
+.hnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:linear-gradient(180deg,#f7f3ecf5,#f7f3ece6);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hnav-in{max-width:1440px;margin:0 auto;padding:18px clamp(16px,3.5vw,52px);display:flex;align-items:center;gap:clamp(18px,3vw,52px)}
+.hl,.hr{display:flex;gap:clamp(18px,3vw,52px);font:400 13px/1 var(--body);letter-spacing:.2em;text-transform:uppercase}
+.hr{margin-left:auto}
+.hl a,.hr a{color:var(--ink);text-decoration:none;padding-block:8px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.hl a:hover,.hr a:hover{color:var(--gold)}
+.hl a[aria-current="page"],.hr a[aria-current="page"]{color:var(--gold);border-bottom-color:var(--gold)}
+.hmark{display:none;font:400 20px/1 var(--body);letter-spacing:.32em;color:var(--ink);text-decoration:none}
+.pill{display:inline-flex;align-items:center;gap:12px;padding:13px 28px;border-radius:999px;background:linear-gradient(180deg,#d2a24a,#9c6f1f);color:#fff;text-decoration:none;font:500 13px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;box-shadow:0 6px 18px #9c6f1f40;transition:filter .2s,transform .2s}
+.pill:hover{filter:brightness(1.08);transform:translateY(-1px)}
+@media (max-width:980px){
+  .hnav-in{flex-wrap:wrap;row-gap:4px;column-gap:16px;padding-block:12px}
+  .hmark{display:block;order:1}
+  .hnav .pill{order:2;margin-left:auto;padding:11px 18px;font-size:11px}
+  .hl{order:3}.hr{order:4;margin-left:0}
+  .hl,.hr{gap:14px;font-size:10.5px;letter-spacing:.14em}
+  .hl a,.hr a{padding-block:6px}
+}
 </style>
 </head>
 <body>
 
 
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="index.html" aria-label="LUMIX Outdoor Lighting home"><img src="mark.jpg" alt=""><span><b>LUMIX</b><small>OUTDOOR LIGHTING</small></span></a>
-    <nav class="links" aria-label="Main">
-      <a href="gallery.html">Gallery</a><a href="smart.html">LUMIX Smart</a><a href="about.html" aria-current="page" style="color:var(--ink)">About</a>
+<header class="hnav">
+  <div class="hnav-in">
+    <nav class="hl" aria-label="Main">
+      <a href="index.html">Home</a><a href="about.html" aria-current="page">About us</a><a href="smart.html">LUMIX Smart</a>
     </nav>
-    <a class="btn" href="index.html#quote">Free quote</a>
+    <a class="hmark" href="index.html" aria-label="LUMIX Outdoor Lighting home">LUMIX</a>
+    <nav class="hr" aria-label="More">
+      <a href="gallery.html#services">Services</a><a href="gallery.html">Gallery</a><a href="index.html#quote">Contact</a>
+    </nav>
+    <a class="pill" href="index.html#quote">Get a quote</a>
   </div>
 </header>
 
