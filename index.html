@@ -257,8 +257,33 @@ html.hw .btn.solid,html.hw .btn.solid:hover{color:#1b0f05}html.hw .btn.solid:hov
 html.hw .btn:hover{color:#1b0f05}
 html.hw .err{color:#ff8a65}
 html.hw .brand img{border-color:#ff9a3c66}
+
+/* === CHRISTMAS THEME (html.xm): on while XM_ON is true in <head> === */
+html:not(.xm) .only-xm,html.xm .hol-copy{display:none!important}
+html.xm{--night:#0d1713;--dusk:#132119;--line:#26392e;--ink:#f6f1e5;--mute:#b9c4ba;--gold:#d8ac52;--gold-soft:#d8ac521f;color-scheme:dark}
+html.xm .hnav{background:linear-gradient(180deg,#0d1713f2,#0d1713cc);border-bottom:1px solid #d8ac5240}
+html.xm .hl a,html.xm .hr a,html.xm .hmark{color:#f6f1e5}
+html.xm .stage::before{background:radial-gradient(ellipse 58% 62% at 24% 42%,#0b140fd0 0%,#0b140f80 55%,#0b140f00 82%),linear-gradient(0deg,#0b140ff2 0%,#0b140fa6 20%,#0b140f00 44%)}
+h1.xm{font:400 clamp(36px,5.2vw,76px)/1.04 var(--display);color:#fff;margin:30px 0 0;max-width:13ch;text-shadow:0 2px 24px #050b08}
+h1.xm em{display:block;font-style:italic;color:#f1cf86;text-shadow:0 0 22px #ffcf7a66}
+html.xm .tag{margin:24px 0 32px}
+.snow{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.85;background-image:radial-gradient(2px 2px at 20px 30px,#fff 60%,transparent),radial-gradient(2.5px 2.5px at 140px 90px,#ffffffd9 60%,transparent),radial-gradient(1.5px 1.5px at 250px 170px,#fff 60%,transparent),radial-gradient(2px 2px at 330px 40px,#ffffffb3 60%,transparent),radial-gradient(3px 3px at 90px 220px,#ffffffe6 60%,transparent);background-size:360px 260px;animation:xmsnow 16s linear infinite}
+.snow::after{content:"";position:absolute;inset:0;opacity:.7;background-image:radial-gradient(1.5px 1.5px at 60px 50px,#fff 60%,transparent),radial-gradient(2px 2px at 200px 130px,#ffffffcc 60%,transparent),radial-gradient(1px 1px at 300px 210px,#fff 60%,transparent);background-size:320px 240px;animation:xmsnow2 24s linear infinite}
+@keyframes xmsnow{from{background-position:0 0}to{background-position:60px 260px}}
+@keyframes xmsnow2{from{background-position:0 0}to{background-position:-40px 240px}}
+html.xm .sv+.sv{border-left:1px solid #d8ac5266}
+.xm-band{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 26px;padding:20px 16px;background:linear-gradient(90deg,#5e1219,#8c1d26 50%,#5e1219);border-block:1px solid #d8ac5280;font:500 12px/1.4 var(--body);letter-spacing:.3em;text-transform:uppercase;color:#f6e3b4}
+.xm-band i{font-style:normal;color:#d8ac52}
+@media (max-width:520px){.xm-band i{display:none}.xm-band{gap:8px 18px;letter-spacing:.2em}}
+html.xm #quote{background:radial-gradient(ellipse 55% 45% at 85% 0%,#8c1d2629,#0d171300)}
+html.xm .steps .n{color:#d8ac52}
+html.xm .panel{background:#122019;border:1px solid #d8ac5266;outline:0;border-radius:22px;box-shadow:0 0 0 1px #d8ac521a,0 24px 60px #000000a6,0 0 70px #8c1d2622}
+html.xm .choice{border-radius:12px}html.xm .choice:hover{border-color:#d8ac5299}
+html.xm label.f input,html.xm label.f select,html.xm label.f textarea{border-radius:10px}
+html.xm .btn.solid,html.xm .btn.solid:hover,html.xm .btn:hover{color:#14100a}html.xm .btn.solid:hover{background:#e8c06a}
+html.xm .err{color:#ff9a8a}
 </style>
-<script>/* Halloween theme: OFF. To turn it on, set HW_ON to true. */var HW_ON=false;if(HW_ON)document.documentElement.classList.add("hw");</script>
+<script>/* Seasonal themes: set one to true. HW_ON = Halloween, XM_ON = Christmas. */var HW_ON=false,XM_ON=true;if(HW_ON)document.documentElement.classList.add("hw");else if(XM_ON)document.documentElement.classList.add("xm");</script>
 </head>
 <body>
 
@@ -280,15 +305,19 @@ html.hw .brand img{border-color:#ff9a3c66}
   <section class="stage" aria-label="LUMIX Outdoor Lighting">
     <img class="stage-bg only-hol" loading="lazy" src="hero.jpg" alt="A two-story stone and stucco home at dusk with warm roofline lights, wreaths, garland around the entry and lit trees">
     <img class="stage-bg only-hw" loading="lazy" src="halloween%20theme.jpg" alt="A stone home at night lit in orange and purple Halloween lights, with jack-o'-lanterns, a ghost and a giant spider">
+    <div class="snow only-xm" aria-hidden="true"></div>
     <div class="stage-copy">
       <div class="wordwrap" aria-hidden="true"><div class="word">LUMIX</div><svg class="spark" viewBox="0 0 100 100"><path d="M50 0 54 46 100 50 54 54 50 100 46 54 0 50 46 46Z"/></svg></div>
       <div class="sub"><span></span>Outdoor Lighting<span></span></div>
       <h1 class="hw only-hw">Make your home stand out <em>this Halloween</em></h1>
-      <h1 class="sr only-hol">LUMIX Outdoor Lighting</h1>
+      <h1 class="sr only-hol hol-copy">LUMIX Outdoor Lighting</h1>
+      <h1 class="xm only-xm">Make your home shine <em>this holiday season</em></h1>
       <p class="tag only-hw">Spooky designs. Professional installation.<br>A hauntingly good look.</p>
-      <p class="tag only-hol">Bringing your home to light<br>with smarter solutions</p>
+      <p class="tag only-hol hol-copy">Bringing your home to light<br>with smarter solutions</p>
+      <p class="tag only-xm">Custom designs. Professional installation.<br>Taken down when the season ends.</p>
       <a class="pill big only-hw" href="#quote">Get my free design consultation <span aria-hidden="true">→</span></a>
-      <a class="pill big only-hol" href="#quote">Get a free quote <span aria-hidden="true">→</span></a>
+      <a class="pill big only-hol hol-copy" href="#quote">Get a free quote <span aria-hidden="true">→</span></a>
+      <a class="pill big only-xm" href="#quote">Book your free holiday design <span aria-hidden="true">→</span></a>
     </div>
     <div class="stage-svc only-hol">
       <a class="sv" href="gallery.html#services">
@@ -327,6 +356,7 @@ html.hw .brand img{border-color:#ff9a3c66}
       </a>
     </div>
   </section>
+  <div class="xm-band only-xm"><span>Book before the December rush</span><i>✦</i><span>Limited install dates</span><i>✦</i><span>Free design consultation</span></div>
   <div class="hw-band only-hw"><span>Safer homes</span><i>|</i><span>Brighter nights</span><i>|</i><span>A more magical season</span></div>
 
 
