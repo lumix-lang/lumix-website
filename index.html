@@ -228,35 +228,37 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-bet
 /* keep the one-row menu on laptops and tablets */
 @media (min-width:700px) and (max-width:980px){.hnav-in{flex-wrap:nowrap;column-gap:18px}.hmark{display:none}.hl,.hr{gap:16px;font-size:10.5px;letter-spacing:.12em}.hl{order:0}.hr{order:0;margin-left:auto}.hnav .pill{order:0;margin-left:0;padding:10px 16px;font-size:10.5px}}
 
-/* === HALLOWEEN 2026 THEME: delete this block + swap hero copy back after Oct 31 === */
-:root{--night:#0c0913;--dusk:#15101f;--line:#2f2540;--ink:#f4eefc;--mute:#b9aecb;--gold:#ff9a3c;--gold-soft:#ff9a3c1f;color-scheme:dark}
-.hnav{background:linear-gradient(180deg,#0c0913f2,#0c0913cc);border-bottom:1px solid #ff9a3c40}
-.hl a,.hr a,.hmark{color:#f4eefc}
-.stage-bg{object-position:72% 40%}
-.stage::before{background:radial-gradient(ellipse 58% 62% at 24% 42%,#0c0913de 0%,#0c091385 55%,#0c091300 82%),linear-gradient(0deg,#0c0913f5 0%,#0c0913ad 20%,#0c091300 44%)}
-.word{background:linear-gradient(180deg,#ffffff 0%,#ffe4c8 50%,#ff9a3c 100%);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 18px #ff8a1f77) drop-shadow(0 0 2px #ffd8b0)}
-.spark{fill:#fff3e0;filter:drop-shadow(0 0 10px #ffb15c) drop-shadow(0 0 22px #ff7a1a)}
-.sub{color:#f1e6ff}.sub span{background:linear-gradient(90deg,#ff9a3c00,#ff9a3c)}.sub span:last-child{background:linear-gradient(90deg,#ff9a3c,#ff9a3c00)}
+/* === HALLOWEEN 2026 THEME: shows automatically until Nov 1, 2026 12:00 AM Eastern (see the script in <head>) === */
+html:not(.hw) .only-hw,html.hw .only-hol{display:none!important}
+html.hw{--night:#0c0913;--dusk:#15101f;--line:#2f2540;--ink:#f4eefc;--mute:#b9aecb;--gold:#ff9a3c;--gold-soft:#ff9a3c1f;color-scheme:dark}
+html.hw .hnav{background:linear-gradient(180deg,#0c0913f2,#0c0913cc);border-bottom:1px solid #ff9a3c40}
+html.hw .hl a,html.hw .hr a,html.hw .hmark{color:#f4eefc}
+html.hw .stage-bg{object-position:72% 40%}
+html.hw .stage::before{background:radial-gradient(ellipse 58% 62% at 24% 42%,#0c0913de 0%,#0c091385 55%,#0c091300 82%),linear-gradient(0deg,#0c0913f5 0%,#0c0913ad 20%,#0c091300 44%)}
+html.hw .word{background:linear-gradient(180deg,#ffffff 0%,#ffe4c8 50%,#ff9a3c 100%);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 18px #ff8a1f77) drop-shadow(0 0 2px #ffd8b0)}
+html.hw .spark{fill:#fff3e0;filter:drop-shadow(0 0 10px #ffb15c) drop-shadow(0 0 22px #ff7a1a)}
+html.hw .sub{color:#f1e6ff}html.hw .sub span{background:linear-gradient(90deg,#ff9a3c00,#ff9a3c)}html.hw .sub span:last-child{background:linear-gradient(90deg,#ff9a3c,#ff9a3c00)}
 h1.hw{font:400 clamp(34px,5vw,72px)/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em;color:#fff;margin:34px 0 0;max-width:15ch;text-shadow:0 2px 24px #0b0614}
 h1.hw em{display:block;font-style:normal;color:#ff9a3c;text-shadow:0 0 24px #ff7a1a80}
-.tag{margin:26px 0 32px;color:#f1e6ff}
-.sv+.sv{border-left:1px solid #ff9a3c66}
-.sv svg{stroke:#ffb15c;filter:drop-shadow(0 0 4px #ff9a3c) drop-shadow(0 0 12px #9b4dff88)}
+html.hw .tag{margin:26px 0 32px;color:#f1e6ff}
+html.hw .sv+.sv{border-left:1px solid #ff9a3c66}
+html.hw .sv svg{stroke:#ffb15c;filter:drop-shadow(0 0 4px #ff9a3c) drop-shadow(0 0 12px #9b4dff88)}
 .sv .pk ellipse{fill:#ff8a1f;stroke:#ffc07a}.sv .pk .st{stroke:#9bd37a}.sv .pk .fc{stroke:#2a1406;stroke-width:2.2}
-.sv:hover b{color:#ffb15c}
+html.hw .sv:hover b{color:#ffb15c}
 .hw-band{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;padding:22px 16px;border-block:1px solid #ff9a3c55;font:500 12px/1.4 var(--body);letter-spacing:.32em;text-transform:uppercase;color:#ff9a3c;background:#0c0913}
 .hw-band i{font-style:normal;color:#ff9a3c80}
 @media (max-width:520px){.hw-band i{display:none}.hw-band{gap:8px 18px;letter-spacing:.22em}}
-#quote{background:radial-gradient(ellipse 55% 45% at 85% 0%,#7b3fe424,#0c091300)}
-.steps .n{color:#ff9a3c}
-.panel{background:#130e1d;border:1px solid #ffb34766;outline:0;border-radius:22px;box-shadow:0 0 0 1px #ffb3471a,0 24px 60px #000000aa,0 0 70px #7b3fe426}
-.choice{border-radius:12px}.choice:hover{border-color:#ff9a3c99}
-label.f input,label.f select,label.f textarea{border-radius:10px}
-.btn.solid,.btn.solid:hover{color:#1b0f05}.btn.solid:hover{background:#ffb15c}
-.btn:hover{color:#1b0f05}
-.err{color:#ff8a65}
-.brand img{border-color:#ff9a3c66}
+html.hw #quote{background:radial-gradient(ellipse 55% 45% at 85% 0%,#7b3fe424,#0c091300)}
+html.hw .steps .n{color:#ff9a3c}
+html.hw .panel{background:#130e1d;border:1px solid #ffb34766;outline:0;border-radius:22px;box-shadow:0 0 0 1px #ffb3471a,0 24px 60px #000000aa,0 0 70px #7b3fe426}
+html.hw .choice{border-radius:12px}html.hw .choice:hover{border-color:#ff9a3c99}
+html.hw label.f input,html.hw label.f select,html.hw label.f textarea{border-radius:10px}
+html.hw .btn.solid,html.hw .btn.solid:hover{color:#1b0f05}html.hw .btn.solid:hover{background:#ffb15c}
+html.hw .btn:hover{color:#1b0f05}
+html.hw .err{color:#ff8a65}
+html.hw .brand img{border-color:#ff9a3c66}
 </style>
+<script>/* Halloween theme timer: on until Nov 1, 2026 12:00 AM Eastern */if(Date.now()<Date.parse("2026-11-01T00:00:00-04:00"))document.documentElement.classList.add("hw");</script>
 </head>
 <body>
 
@@ -276,15 +278,37 @@ label.f input,label.f select,label.f textarea{border-radius:10px}
 
 <main id="top">
   <section class="stage" aria-label="LUMIX Outdoor Lighting">
-    <img class="stage-bg" src="halloween%20theme.jpg" alt="A stone home at night lit in orange and purple Halloween lights, with jack-o'-lanterns, a ghost and a giant spider">
+    <img class="stage-bg only-hol" loading="lazy" src="hero.jpg" alt="A two-story stone and stucco home at dusk with warm roofline lights, wreaths, garland around the entry and lit trees">
+    <img class="stage-bg only-hw" loading="lazy" src="halloween%20theme.jpg" alt="A stone home at night lit in orange and purple Halloween lights, with jack-o'-lanterns, a ghost and a giant spider">
     <div class="stage-copy">
       <div class="wordwrap" aria-hidden="true"><div class="word">LUMIX</div><svg class="spark" viewBox="0 0 100 100"><path d="M50 0 54 46 100 50 54 54 50 100 46 54 0 50 46 46Z"/></svg></div>
       <div class="sub"><span></span>Outdoor Lighting<span></span></div>
-      <h1 class="hw">Make your home stand out <em>this Halloween</em></h1>
-      <p class="tag">Spooky designs. Professional installation.<br>A hauntingly good look.</p>
-      <a class="pill big" href="#quote">Get my free design consultation <span aria-hidden="true">→</span></a>
+      <h1 class="hw only-hw">Make your home stand out <em>this Halloween</em></h1>
+      <h1 class="sr only-hol">LUMIX Outdoor Lighting</h1>
+      <p class="tag only-hw">Spooky designs. Professional installation.<br>A hauntingly good look.</p>
+      <p class="tag only-hol">Bringing your home to light<br>with smarter solutions</p>
+      <a class="pill big only-hw" href="#quote">Get my free design consultation <span aria-hidden="true">→</span></a>
+      <a class="pill big only-hol" href="#quote">Get a free quote <span aria-hidden="true">→</span></a>
     </div>
-    <div class="stage-svc">
+    <div class="stage-svc only-hol">
+      <a class="sv" href="gallery.html#services">
+        <svg viewBox="0 0 120 64" aria-hidden="true"><path d="M8 36 60 6l52 30"/><path d="M18 31v29h84V31"/><path d="M50 60V44h20v16"/><rect x="28" y="40" width="12" height="10"/><rect x="80" y="40" width="12" height="10"/><path d="M2 60h116"/></svg>
+        <b>Roofline lighting</b><small>Clean, elegant, professional</small>
+      </a>
+      <a class="sv" href="gallery.html#services">
+        <svg viewBox="0 0 120 64" aria-hidden="true"><path d="M42 4v56M42 12l-12 12M42 12l12 12M42 22l-16 16M42 22l16 16M42 34l-19 18M42 34l19 18"/><path d="M80 10v50M80 18l-10 10M80 18l10 10M80 28l-14 14M80 28l14 14M80 40l-16 14M80 40l16 14"/><path d="M14 60h92"/></svg>
+        <b>Tree &amp; landscape lighting</b><small>Highlight what makes your home special</small>
+      </a>
+      <a class="sv" href="gallery.html#services">
+        <svg viewBox="0 0 120 64" aria-hidden="true"><path d="M38 60V14h44v46"/><path d="M34 14h52"/><circle cx="60" cy="34" r="8"/><path d="M52 60V48h16v12"/><path d="M22 60l5-26 5 26M88 60l5-26 5 26"/><path d="M14 60h92"/></svg>
+        <b>Entryway design</b><small>Make a beautiful first impression</small>
+      </a>
+      <a class="sv" href="gallery.html#services">
+        <svg viewBox="0 0 120 64" aria-hidden="true"><path d="M20 30 60 6l40 24"/><path d="M28 26v34h64V26"/><rect x="38" y="36" width="44" height="24"/><path d="M38 44h44M38 52h44"/><path d="M10 60l4-18 4 18M102 60l4-18 4 18"/><path d="M4 60h112"/></svg>
+        <b>Custom designs</b><small>Tailored to your home and style</small>
+      </a>
+    </div>
+    <div class="stage-svc only-hw">
       <a class="sv" href="gallery.html#services">
         <svg viewBox="0 0 120 64" aria-hidden="true"><path d="M8 32 44 8l36 24"/><path d="M16 27v33h56V27"/><path d="M38 60V46h12v14"/><path d="M22 33h10M22 33l7 8M27 33v12"/><path d="M2 60h76"/><g class="pk"><ellipse cx="96" cy="50" rx="14" ry="11"/><path class="st" d="M96 39q0-6 5-8"/><path class="fc" d="M90 48l3-3 3 3M99 48l3-3 3 3M89 54q7 5 14 0"/></g></svg>
         <b>Custom designs</b><small>Bring your vision to life</small>
@@ -303,7 +327,7 @@ label.f input,label.f select,label.f textarea{border-radius:10px}
       </a>
     </div>
   </section>
-  <div class="hw-band"><span>Safer homes</span><i>|</i><span>Brighter nights</span><i>|</i><span>A more magical season</span></div>
+  <div class="hw-band only-hw"><span>Safer homes</span><i>|</i><span>Brighter nights</span><i>|</i><span>A more magical season</span></div>
 
 
   <section id="quote"><div class="wrap quote-grid">
@@ -335,7 +359,7 @@ label.f input,label.f select,label.f textarea{border-radius:10px}
             <label class="choice"><input type="checkbox" id="s1" name="svc" value="Roofline lighting"><b>Roofline lighting</b><small>Gutters, peaks and gables outlined in light.</small></label>
             <label class="choice"><input type="checkbox" id="s2" name="svc" value="Tree &amp; landscape lighting"><b>Tree &amp; landscape</b><small>Wrapped trunks, canopies, shrubs and paths.</small></label>
             <label class="choice"><input type="checkbox" id="s3" name="svc" value="Entryway design"><b>Entryway design</b><small>Wreaths, garland and lit doorways.</small></label>
-            <label class="choice"><input type="checkbox" id="s4" name="svc" value="Custom design"><b>Custom design</b><small>Halloween themes, color, storefronts, special ideas.</small></label>
+            <label class="choice"><input type="checkbox" id="s4" name="svc" value="Custom design"><b>Custom design</b><small>Holiday &amp; Halloween themes, color, storefronts, special ideas.</small></label>
             <label class="choice" style="grid-column:1/-1"><input type="checkbox" id="s5" name="svc" value="Not sure yet – help me decide"><b>Not sure yet</b><small>Help me decide what would look best on my home.</small></label>
           </div>
         </fieldset>
