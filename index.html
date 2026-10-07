@@ -228,6 +228,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-bet
 /* keep the one-row menu on laptops and tablets */
 @media (min-width:700px) and (max-width:980px){.hnav-in{flex-wrap:nowrap;column-gap:18px}.hmark{display:none}.hl,.hr{gap:16px;font-size:10.5px;letter-spacing:.12em}.hl{order:0}.hr{order:0;margin-left:auto}.hnav .pill{order:0;margin-left:0;padding:10px 16px;font-size:10.5px}}
 
+
+/* === Readability boost: darker text, sturdier type (seasonal themes still override colors) === */
+:root{--ink:#0f1830;--mute:#3f4759;--gold:#8f6720;--gold-soft:#8f67201a}
+body{font-weight:400}
+h1,h2,h3{font-weight:500}
+.eyebrow{font-weight:600}
 /* === HALLOWEEN 2026 THEME: shows automatically until Nov 1, 2026 12:00 AM Eastern (see the script in <head>) === */
 html:not(.hw) .only-hw,html.hw .only-hol{display:none!important}
 html.hw{--night:#0c0913;--dusk:#15101f;--line:#2f2540;--ink:#f4eefc;--mute:#b9aecb;--gold:#ff9a3c;--gold-soft:#ff9a3c1f;color-scheme:dark}
